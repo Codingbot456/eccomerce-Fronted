@@ -1,0 +1,89 @@
+import React, { useContext, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { CartContext } from '../context/CartContext';
+import './checkout.css';
+
+const CheckoutPage = () => {
+  const { cartItems } = useContext(CartContext);
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [message, setMessage] = useState('');
+
+  const navigate = useNavigate();
+  const isAuthenticated = !!localStorage.getItem('token');
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate('/login');
+    }
+  }, [isAuthenticated, navigate]);
+
+  const handleCheckout = async (event) => {
+    event.preventDefault();
+
+    // Validate totalAmount is a number
+    if (isNaN(totalAmount) || totalAmount <= 0) {
+      setMessage('Invalid amount');
+      return;
+    }
+
+    // Proceed with the payment process
+    try {
+      const response = await axios.post('http://localhost:4000/stkpush', {
+        phoneNumber: phoneNumber,
+        amount: totalAmount,
+      });
+      setMessage(response.data);
+      console.log('Checkout:', { phoneNumber, totalAmount });
+    } catch (error) {
+      setMessage(error.response ? error.response.data : 'An error occurred');
+      console.error('Error details:', error.response ? error.response.data : error.message);
+    }
+  };
+
+  const totalPrice = cartItems.reduce((total, item) => total + item.totalPrice, 0);
+  const vat = totalPrice * 0.2;
+  const totalAmount = Math.round(totalPrice + vat);  // Ensure amount is an integer
+
+  return (
+    <div className="checkout-page">
+      <h2>Checkout</h2>
+      <form onSubmit={handleCheckout}>
+        <div className="form-group">
+          <label htmlFor="phoneNumber">Phone Number</label>
+          <input
+            type="text"
+            id="phoneNumber"
+            name="phoneNumber"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit">Place Order</button>
+      </form>
+      {message && <p>{message}</p>}
+      <div className="order-summary">
+        <h3>Order Summary</h3>
+        {cartItems.map((item) => (
+          <div key={item.id} className="item-summary">
+            <img src={item.image_url} alt={item.name} />
+            <div>
+              <p>{item.name}</p>
+              <p>Price: {item.price}</p>
+              <p>Quantity: {item.quantity}</p>
+              <p>Total Price: {item.totalPrice}</p>
+            </div>
+          </div>
+        ))}
+        <div className="totals">
+          <p>Subtotal: {totalPrice.toFixed(2)}</p>
+          <p>VAT (20%): {vat.toFixed(2)}</p>
+          <p>Total Amount: {totalAmount}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CheckoutPage;

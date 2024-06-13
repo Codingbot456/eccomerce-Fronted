@@ -1,0 +1,31 @@
+/* sort.css */
+.sort-container {
+    margin-bottom: 20px;
+  }
+  
+  .sort-container h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+    border-radius:4px ;
+  }
+  
+  .sort-container select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 4px 0 0;
+    transition: .5s ease;
+    width: 100%;
+    border: .5px  solid black;
+    outline: none;
+  }
+  .sort-container select:hover{
+    scale: 1.04;
+
+  }
+  select:hover{
+    letter-spacing: .3px;
+  }
+  
+  

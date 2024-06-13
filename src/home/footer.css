@@ -1,0 +1,79 @@
+
+.Main-footer{
+  border-top: .03px solid grey;
+  gap: 5px;
+  height: auto;
+  background-color:rgb(23, 20, 20);
+  color:whitesmoke;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+ 
+
+}
+.sub-footer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:center;
+  gap:40px;
+  padding: 10px;
+  margin-bottom: 60px
+
+}
+.sub-footer-2{
+  display: flex;
+  flex-wrap: wrap;
+  gap:20px;
+}
+.sub-footer-2 img{
+width:60px;
+height: 40px;
+aspect-ratio: 1/1;
+
+}
+.Main-footer .footer-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top:30px;
+}
+
+.social,
+.contact,
+.categories,
+.about,
+.customercare,
+.info
+ {
+  flex: 1;
+  margin-right: 20px;
+  
+  height: 250px;
+  display: grid;
+  text-align: left;
+}
+.social a,
+.contact a,
+.categories a,
+.about a,
+.customercare a,
+.info a {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color:whitesmoke;
+  
+}
+
+.social div,
+.contact div,
+.categories div,
+.about div,
+.customercare div,
+.info div  {
+display: flex;
+flex-direction: column;
+text-align: left;
+}

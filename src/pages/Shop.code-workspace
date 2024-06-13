@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../trialjs"
+		},
+		{
+			"path": "../../../../fetch trial"
+		}
+	],
+	"settings": {}
+}

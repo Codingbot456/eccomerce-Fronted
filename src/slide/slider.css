@@ -1,0 +1,91 @@
+
+.cone{
+  margin-top: 30px;
+  
+}
+.con-slider{
+  margin-top: 40px;
+}
+
+.mySwiper2 {
+  width: 100%;
+  height: 450px;
+}
+
+.mySwiper2 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  
+  
+
+}
+
+.mySwiper {
+  width: 100%;
+  height: 200px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.mySwiper{
+  text-align: center;
+}
+.mySwiper img {
+  display: block;
+  width: 70%;
+  height: 60%;
+  margin-left: 50px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  border-radius: 10px;
+}
+.mySwiper img:hover{
+  scale: 1.002;
+  transition: .3s ease-out;
+  transform: translateY(4px);
+
+}
+.swiperSlide h4{
+  margin-top: 40px;
+}
+
+
+
+.mySwiper img:hover,
+.mySwiper .swiper-slide-thumb-active img {
+  border-color:black;
+  transition: .3s ease-out;
+}
+
+/* Navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+}
+
+
+@media (max-width: 768px) {
+  /* Adjust swiper container size for smaller screens */
+  
+  .mySwiper img {
+    width: 100px;
+    margin-left: 0;
+    height: 100px; /* Adjust maximum width for smaller screens */
+  }
+  
+}
+
+
+

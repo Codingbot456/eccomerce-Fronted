@@ -1,0 +1,76 @@
+.filter-container {
+  padding: 20px;
+  width: 300px;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-top: -16%;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0; /* Adjust the distance from the top as needed */
+}
+
+.filter-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-results {
+  background-color: #ffffff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-results p {
+  margin: 5px 0;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-section h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.filter-option input[type="radio"],
+.filter-option input[type="checkbox"] {
+  margin-right: 10px;
+  width: 15px;
+  aspect-ratio: 1;
+}
+.filter-option input[type="radio"],
+.filter-option input[type="checkbox"]:hover {
+ transition: .5s ease;
+ scale: 1.02;
+}
+
+.filter-option label {
+  cursor: pointer;
+  flex: 1;
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .filter-container {
+      display: none;
+      background-color: red;
+  }
+}
