@@ -38,7 +38,7 @@ function Subcategory() {
         <div className="App">
             <h1>All Products</h1>
             <ul>
-                {products.map((product, index) => (
+                {products && products.length && products.map((product, index) => (
                     <li key={index}>
                         <ProductCard product={product} />
                     </li>

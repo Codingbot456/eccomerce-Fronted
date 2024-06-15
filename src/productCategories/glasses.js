@@ -46,7 +46,7 @@ function GlassesProducts() {
         <div className="App">
             <h1>All Products</h1>
             <div className="item-con">
-                {products.map((product, index) => (
+                {products && products.length && products.map((product, index) => (
                     <ProductCard key={index} product={product} onProductSelect={handleProductSelect} />
                 ))}
             </div>

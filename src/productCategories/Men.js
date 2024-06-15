@@ -74,7 +74,7 @@ function MenProducts() {
                     <div className={`home-prods4 ${selectedProduct ? 'dimmed' : ''}`}>
                         <h2>{category === 'all' ? 'All Products' : category.charAt(0).toUpperCase() + category.slice(1) + ' Clothes'}</h2>
                         <div className="item-content4">
-                            {products.map((product, index) => (
+                            {products && products.length && products.map((product, index) => (
                                 <ProductCard
                                     key={index}
                                     product={product}

@@ -39,7 +39,7 @@ function TrendingProducts() {
             <h2>Trending Fashion Clothes</h2>
             <div className="item-content">
                 
-                {products.map((product, index) => (
+                {products && products.length && products.map((product, index) => (
                     <ProductCard key={index} product={product} addToCart={addToCart} />
                 ))}
             </div>

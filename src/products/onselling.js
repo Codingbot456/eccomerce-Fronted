@@ -39,7 +39,7 @@ function SellingProducts() {
         <div className={`home-prods3 ${selectedProduct ? 'dimmed' : ''}`}>
             <h2>On-Selling Clothes</h2>
             <div className="item-content3">
-                {products.map((product, index) => (
+                {products && products.length && products.map((product, index) => (
                     <ProductCard
                         key={index}
                         product={product}
