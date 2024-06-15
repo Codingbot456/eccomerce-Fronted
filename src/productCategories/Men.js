@@ -24,20 +24,20 @@ function MenProducts() {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            let url = 'http://localhost:4000/api/products/category/1';
+            let url = 'process.env.REACT_APP_BACKEND_URL/api/products/category/1';
 
             switch (category) {
                 case 'featured':
-                    url = 'http://localhost:4000/api/products/subcategory/3';
+                    url = 'process.env.REACT_APP_BACKEND_URL/api/products/subcategory/3';
                     break;
                 case 'new':
-                    url = 'http://localhost:4000/api/products/subcategory/2';
+                    url = 'process.env.REACT_APP_BACKEND_URL/api/products/subcategory/2';
                     break;
                 case 'selling':
-                    url = 'http://localhost:4000/api/products/subcategory/4';
+                    url = 'process.env.REACT_APP_BACKEND_URL/api/products/subcategory/4';
                     break;
                 default:
-                    url = 'http://localhost:4000/api/products/';
+                    url = 'process.env.REACT_APP_BACKEND_URL/api/products/';
             }
 
             try {

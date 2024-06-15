@@ -13,7 +13,7 @@ function SneakersProducts() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/api/products/category/5');
+                const response = await axios.get('process.env.REACT_APP_BACKEND_URL/api/products/category/5');
                 setProducts(response.data);
             } catch (error) {
                 console.error('Error fetching products:', error);

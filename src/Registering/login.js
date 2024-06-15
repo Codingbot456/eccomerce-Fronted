@@ -36,7 +36,7 @@ const Login = () => {
         const newErrors = validate();
         if (Object.keys(newErrors).length === 0) {
             try {
-                const res = await axios.post('http://localhost:4000/api/login', formData);
+                const res = await axios.post('process.env./api/login', formData);
                 if (res.data.token) {
                     localStorage.setItem('token', res.data.token);
                     setIsAuthenticated(true);

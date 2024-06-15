@@ -194,14 +194,8 @@
 </div>
 
 
-
-
-
 <div id="main">
 </div>
-
-
-
 
 <div class="navs">
   <i class="fa fa-bars" aria-hidden="true"  class="openbtn" onclick="openNav()"></i>
@@ -300,7 +294,7 @@ function triggerCartClick() {
 function handleSearch(query) {
     console.log('Handling search query:', query);
 
-    fetch(`http://localhost:4000/search?query=${encodeURIComponent(query)}`)
+    fetch(`process.env.REACT_APP_BACKEND_URL/search?query=${encodeURIComponent(query)}`)
         .then(response => {
             console.log('Fetch response:', response);
             if (!response.ok) {

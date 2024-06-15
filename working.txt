@@ -29,7 +29,7 @@ const CheckoutPage = () => {
 
     // Proceed with the payment process
     try {
-      const response = await axios.post('http://localhost:4000/stkpush', {
+      const response = await axios.post('process.env.REACT_APP_BACKEND_URL/stkpush', {
         phoneNumber: phoneNumber,
         amount: totalAmount,
       });
