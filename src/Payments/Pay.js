@@ -17,7 +17,7 @@ const PaymentForm = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('process.env.REACT_APP_BACKEND_URL/stkpush', {
+      const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/stkpush', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

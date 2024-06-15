@@ -7,7 +7,7 @@ import './multer.css';
 const ProductList = ({ products, onEdit, onDelete }) => {
     const handleDelete = async (productId) => {
         try {
-            await axios.delete(`process.env.REACT_APP_BACKEND_URL/api/products/${productId}`);
+            await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/api/products/${productId}`);
             onDelete(productId);
         } catch (error) {
             console.error('Error deleting product:', error);
@@ -57,8 +57,8 @@ const ProductForm = ({ product, onSave }) => {
 
         try {
             const url = product
-                ? `process.env.REACT_APP_BACKEND_URL/api/products/${product.id}`
-                : 'process.env.REACT_APP_BACKEND_URL/api/products';
+                ? `${process.env.REACT_APP_BACKEND_URL}/api/products/${product.id}`
+                : '${process.env.REACT_APP_BACKEND_URL}/api/products';
 
             const method = product ? 'put' : 'post';
 
@@ -121,7 +121,7 @@ const App = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get('process.env.REACT_APP_BACKEND_URL/api/products');
+            const response = await axios.get('${process.env.REACT_APP_BACKEND_URL}/api/products');
             setProducts(response.data);
         } catch (error) {
             console.error('Error fetching products:', error);
@@ -134,7 +134,7 @@ const App = () => {
 
     const handleUpdate = async (updatedProduct) => {
         try {
-            await axios.put(`process.env.REACT_APP_BACKEND_URL/api/products/${updatedProduct.id}`, updatedProduct);
+            await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/products/${updatedProduct.id}`, updatedProduct);
             setEditingProduct(null);
             fetchProducts(); // Refresh the product list
         } catch (error) {

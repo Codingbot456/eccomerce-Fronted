@@ -294,7 +294,7 @@ function triggerCartClick() {
 function handleSearch(query) {
     console.log('Handling search query:', query);
 
-    fetch(`process.env.REACT_APP_BACKEND_URL/search?query=${encodeURIComponent(query)}`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/search?query=${encodeURIComponent(query)}`)
         .then(response => {
             console.log('Fetch response:', response);
             if (!response.ok) {

@@ -31,8 +31,8 @@ const ProductForm = ({ product, onSave }) => {
 
         try {
             const url = product
-                ? `process.env.REACT_APP_BACKEND_URL/api/products/${product.id}`
-                : 'process.env.REACT_APP_BACKEND_URL/api/products';
+                ? `${process.env.REACT_APP_BACKEND_URL}/api/products/${product.id}`
+                : '${process.env.REACT_APP_BACKEND_URL}/api/products';
             const method = product ? 'put' : 'post';
 
             const response = await axios[method](url, formData, {
