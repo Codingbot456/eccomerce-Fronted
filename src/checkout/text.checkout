@@ -32,7 +32,7 @@ const CheckoutForm = () => {
     const dataToSend = { ...formData, total_price };
 
     try {
-      const response = await axios.post('${process.env.REACT_APP_BACKEND_URL}/api/orders/orders', dataToSend, {
+      const response = await axios.post('http://localhost:4000/api/orders/orders', dataToSend, {
         headers: {
           'Content-Type': 'application/json'
         }

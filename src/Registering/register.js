@@ -40,7 +40,7 @@ function Registration() {
     const newErrors = validate();
     if (Object.keys(newErrors).length === 0) {
       try {
-        const res = await axios.post('${process.env.REACT_APP_BACKEND_URL}/api/register', formData);
+        const res = await axios.post('http://localhost:4000/api/register', formData);
         setSubmitted(true);
         alert('Registration Successful');
         setTimeout(() => {
