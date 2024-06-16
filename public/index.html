@@ -294,7 +294,7 @@ function triggerCartClick() {
 function handleSearch(query) {
     console.log('Handling search query:', query);
 
-    fetch(`http://localhost:4000/search?query=${encodeURIComponent(query)}`)
+    fetch(`https://shopping-backend-five.vercel.app/search?query=${encodeURIComponent(query)}`)
         .then(response => {
             console.log('Fetch response:', response);
             if (!response.ok) {

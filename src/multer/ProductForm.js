@@ -31,8 +31,8 @@ const ProductForm = ({ product, onSave }) => {
 
         try {
             const url = product
-                ? `http://localhost:4000/api/products/${product.id}`
-                : 'http://localhost:4000/api/products';
+                ? `https://shopping-backend-five.vercel.app/api/products/${product.id}`
+                : 'https://shopping-backend-five.vercel.app/api/products';
             const method = product ? 'put' : 'post';
 
             const response = await axios[method](url, formData, {

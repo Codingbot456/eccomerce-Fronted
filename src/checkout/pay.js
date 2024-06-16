@@ -18,7 +18,7 @@ const PaymentForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:4000/stkpush', {
+      const response = await fetch('https://shopping-backend-five.vercel.app/stkpush', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

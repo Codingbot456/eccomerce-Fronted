@@ -13,7 +13,7 @@ function GlassesProducts() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/api/products/category/8');
+                const response = await axios.get('https://shopping-backend-five.vercel.app/api/products/category/8');
                 setProducts(response.data);
             } catch (error) {
                 console.error('Error fetching products:', error);

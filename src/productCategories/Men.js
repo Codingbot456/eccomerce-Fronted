@@ -24,20 +24,20 @@ function MenProducts() {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            let url = '${process.env.REACT_APP_BACKEND_URL}/api/products/category/1';
+            let url = 'https://shopping-backend-five.vercel.app/api/products/category/1';
 
             switch (category) {
                 case 'featured':
-                    url = '${process.env.REACT_APP_BACKEND_URL}/api/products/subcategory/3';
+                    url = 'https://shopping-backend-five.vercel.app/api/products/subcategory/3';
                     break;
                 case 'new':
-                    url = '${process.env.REACT_APP_BACKEND_URL}/api/products/subcategory/2';
+                    url = 'https://shopping-backend-five.vercel.app/api/products/subcategory/2';
                     break;
                 case 'selling':
-                    url = '${process.env.REACT_APP_BACKEND_URL}/api/products/subcategory/4';
+                    url = 'https://shopping-backend-five.vercel.app/api/products/subcategory/4';
                     break;
                 default:
-                    url = '${process.env.REACT_APP_BACKEND_URL}/api/products/';
+                    url = 'https://shopping-backend-five.vercel.app/api/products/';
             }
 
             try {
@@ -74,7 +74,7 @@ function MenProducts() {
                     <div className={`home-prods4 ${selectedProduct ? 'dimmed' : ''}`}>
                         <h2>{category === 'all' ? 'All Products' : category.charAt(0).toUpperCase() + category.slice(1) + ' Clothes'}</h2>
                         <div className="item-content4">
-                            {products && products.length && products.map((product, index) => (
+                            {products.map((product, index) => (
                                 <ProductCard
                                     key={index}
                                     product={product}

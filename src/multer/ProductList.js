@@ -7,7 +7,7 @@ import './multer.css';
 const ProductList = ({ products, onEdit, onDelete }) => {
     const handleDelete = async (productId) => {
         try {
-            await axios.delete(`http://localhost:4000/api/products/${productId}`);
+            await axios.delete(`https://shopping-backend-five.vercel.app/api/products/${productId}`);
             onDelete(productId);
         } catch (error) {
             console.error('Error deleting product:', error);
@@ -57,8 +57,8 @@ const ProductForm = ({ product, onSave }) => {
 
         try {
             const url = product
-                ? `http://localhost:4000/api/products/${product.id}`
-                : 'http://localhost:4000/api/products';
+                ? `https://shopping-backend-five.vercel.app/api/products/${product.id}`
+                : 'https://shopping-backend-five.vercel.app/api/products';
 
             const method = product ? 'put' : 'post';
 
@@ -121,7 +121,7 @@ const App = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/api/products');
+            const response = await axios.get('https://shopping-backend-five.vercel.app/api/products');
             setProducts(response.data);
         } catch (error) {
             console.error('Error fetching products:', error);
@@ -134,7 +134,7 @@ const App = () => {
 
     const handleUpdate = async (updatedProduct) => {
         try {
-            await axios.put(`http://localhost:4000/api/products/${updatedProduct.id}`, updatedProduct);
+            await axios.put(`https://shopping-backend-five.vercel.app/api/products/${updatedProduct.id}`, updatedProduct);
             setEditingProduct(null);
             fetchProducts(); // Refresh the product list
         } catch (error) {
