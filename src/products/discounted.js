@@ -13,7 +13,7 @@ function Subcategory() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('https://shopping-backend-five.vercel.app/api/products/subcategory/2');
+                const response = await axios.get('http://localhost:4000/api/products/subcategory/2');
                 setProducts(response.data);
             } catch (error) {
                 console.error('Error fetching products:', error);
